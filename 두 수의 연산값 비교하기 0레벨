@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+
+int solution(int a, int b) {
+    int answer = 2 * a * b;
+    int q = 0;
+    int a_len = 1;
+    
+    for(int i = b; i > 0; i /= 10){
+        a_len *= 10;
+    }
+    
+    a = a * a_len + b;
+    
+    if(a > answer){
+        answer = a;
+    }
+    if(a == answer){
+        answer = a;
+    }
+    
+    return answer;
+}
